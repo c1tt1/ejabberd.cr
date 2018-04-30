@@ -1,0 +1,9 @@
+name: ejabberd
+version: 0.1.0
+
+authors:
+  - stern0 <mnxx@protonmail.com>
+
+crystal: 0.24.2
+
+license: MIT
