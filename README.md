@@ -17,15 +17,15 @@ dependencies:
 ```crystal
 require "ejabberd"
 
-# client = Ejabberd.new "api_url", "host"
-client = Ejabberd.new "http://127.0.0.1:5280", "chat.example.com"
+# ejabberd = Ejabberd.new "api_url"
+ejabberd = Ejabberd.new "http://127.0.0.1:5280"
 
 ```
 
 ## Development
 
 This project requires a locally running ejabberd server running with http api set in ejabberd.yml file.
-The test specs are not implemented yet.
+The test specs are currently in implementation.
 
 ## Contributing
 
