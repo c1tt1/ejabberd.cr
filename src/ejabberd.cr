@@ -2,7 +2,7 @@ require "http/client"
 require "json"
 
 # TODO: Write documentation for `Ejabberd`
-class Ejabberd
+struct Ejabberd
   def initialize(@api_url : String)
   end
 
@@ -220,7 +220,7 @@ class Ejabberd
     request("delete_mnesia", body)
   end
 
-  def delete_old_messages(days : UInt16) : HTTP::Client::Response
+  def delete_old_messages(days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "days", days
@@ -230,7 +230,7 @@ class Ejabberd
     request("delete_old_messages", body)
   end
 
-  def delete_old_users(days : UInt16) : HTTP::Client::Response
+  def delete_old_users(days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "days", days
@@ -240,7 +240,7 @@ class Ejabberd
     request("delete_old_users", body)
   end
 
-  def delete_old_users_vhost(host : String, days : UInt16) : HTTP::Client::Response
+  def delete_old_users_vhost(host : String, days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "host", host
@@ -1109,7 +1109,8 @@ class Ejabberd
     request("send_stanza_c2s", body)
   end
 
-  def set_presence(user : String, host : String, resource : String, type_ : String, show : String, status : String, priority : String) : HTTP::Client::Response
+  def set_presence(user : String, host : String, resource : String, type_ : String,
+                   show : String, status : String, priority : String) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "user", user
