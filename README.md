@@ -1,6 +1,9 @@
 # ejabberd.cr
 
-A Crystal library to easily communicate with the ejabberd admin API
+A Crystal library to easily communicate with the ejabberd admin API.
+It implements all [ejabberd rest api reference](https://docs.ejabberd.im/developer/ejabberd-api/admin-api/).\
+This library is small and simple, it can be read and understood in no more than 10 minutes.
+
 
 ## Installation
 
@@ -21,6 +24,41 @@ require "ejabberd"
 ejabberd = Ejabberd.new "http://127.0.0.1:5280"
 
 ```
+
+This library implements same method names as the [ejabberd rest api reference](https://docs.ejabberd.im/developer/ejabberd-api/admin-api/) and take same value types as the api reference.\
+For example [add_rosteritem](https://docs.ejabberd.im/developer/ejabberd-api/admin-api/#add-rosteritem) in the api reference like the following:
+
+```json
+POST /api/add_rosteritem
+{
+  "localuser": "user1",
+  "localserver": "myserver.com",
+  "user": "user2",
+  "server": "myserver.com",
+  "nick": "User 2",
+  "group": "Friends",
+  "subs": "both"
+}
+
+HTTP/1.1 200 OK
+""
+```
+
+With this library the above becomes the following:
+```crystal
+ejabberd.add_rosteritem("user1", "myserver.com", "user2", "myserver.com", "User 2", "Friends", "both")
+```
+
+You can also add the argument names like the following:
+```crystal
+ejabberd.add_rosteritem(localuser: "user1", localserver: "myserver.com", user: "user2", server: "myserver.com", nick: "User 2", group: "Friends", subs: "both")
+```
+
+#### Return types
+Each method return an [`HTTP::Client::Response`](https://crystal-lang.org/api/0.24.1/HTTP/Client/Response.html) instance, so you can call methods like `body` and `status_code` ont it.
+
+#### Memory footprint
+The library resides on the stack which makes it fast and cheap due to to no allocation on the heap.
 
 ## Development
 

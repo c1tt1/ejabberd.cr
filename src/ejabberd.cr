@@ -1,7 +1,6 @@
 require "http/client"
 require "json"
 
-# TODO: Write documentation for `Ejabberd`
 struct Ejabberd
   def initialize(@api_url : String)
   end
