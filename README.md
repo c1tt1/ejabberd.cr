@@ -55,7 +55,7 @@ ejabberd.add_rosteritem(localuser: "user1", localserver: "myserver.com", user: "
 ```
 
 #### Return types
-Each method return an [`HTTP::Client::Response`](https://crystal-lang.org/api/0.24.1/HTTP/Client/Response.html) instance, so you can call methods like `body` and `status_code` ont it.
+Each method return an [`HTTP::Client::Response`](https://crystal-lang.org/api/0.24.1/HTTP/Client/Response.html) instance, so you can any call methods like [`body`](https://crystal-lang.org/api/0.24.1/HTTP/Client/Response.html#body-instance-method) or [`status_code`](https://crystal-lang.org/api/0.24.1/HTTP/Client/Response.html#status_message%3AString-instance-method) on it.
 
 #### Memory footprint
 The library resides on the stack which makes it fast and cheap due to to no allocation on the heap.
