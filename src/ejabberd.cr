@@ -769,7 +769,7 @@ struct Ejabberd
     request("muc_unregister_nick", body)
   end
 
-  def num_active_users(host : String, days : UInt16) : HTTP::Client::Response
+  def num_active_users(host : String, days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "host", host
@@ -791,7 +791,7 @@ struct Ejabberd
     request("num_resources", body)
   end
 
-  def oauth_issue_token(jid : String, ttl : UInt16, scopes : String) : HTTP::Client::Response
+  def oauth_issue_token(jid : String, ttl : Int32, scopes : String) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "jid", jid
@@ -984,7 +984,7 @@ struct Ejabberd
     request("revoke_certificate", body)
   end
 
-  def rooms_unused_destroy(host : String, days : UInt16) : HTTP::Client::Response
+  def rooms_unused_destroy(host : String, days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "host", host
@@ -995,7 +995,7 @@ struct Ejabberd
     request("rooms_unused_destroy", body)
   end
 
-  def rooms_unused_list(host : String, days : UInt16) : HTTP::Client::Response
+  def rooms_unused_list(host : String, days : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "host", host
@@ -1063,7 +1063,7 @@ struct Ejabberd
     request("send_stanza_c2s", body)
   end
 
-  def set_last(user : String, host : String, time_stamp : UInt, status : String) : HTTP::Client::Response
+  def set_last(user : String, host : String, time_stamp : Int32, status : String) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "user", user
@@ -1076,7 +1076,7 @@ struct Ejabberd
     request("set_last", body)
   end
 
-  def set_loglevel(log_level : UInt8) : HTTP::Client::Response
+  def set_loglevel(log_level : Int32) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "loglevel", log_level
@@ -1339,7 +1339,7 @@ struct Ejabberd
     request("stop", "{}")
   end
 
-  def stop_kindly(delay : UInt16, announcement : String) : HTTP::Client::Response
+  def stop_kindly(delay : Int32, announcement : String) : HTTP::Client::Response
     body = JSON.build do |json|
       json.object do
         json.field "delay", delay
