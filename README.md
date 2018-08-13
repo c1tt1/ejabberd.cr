@@ -75,4 +75,4 @@ The test specs are currently in implementation.
 
 ## Contributors
 
-- Bug reports and pull requests are welcome on GitHub at [stern0](https://github.com/kaskerd) - creator, maintainer
+- Bug reports and pull requests are welcome on GitHub at [kaskerd](https://github.com/kaskerd) - creator, maintainer
