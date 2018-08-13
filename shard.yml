@@ -2,7 +2,7 @@ name: ejabberd
 version: 0.1.0
 
 authors:
-  - stern0 <mnxx@protonmail.com>
+  - kaskerd <https://github.com/kaskerd>
 
 crystal: 0.24.2
 

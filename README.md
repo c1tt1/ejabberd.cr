@@ -12,7 +12,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ejabberd:
-    github: stern0/ejabberd.cr
+    github: kaskerd/ejabberd.cr
 ```
 
 ## Usage
@@ -67,7 +67,7 @@ The test specs are currently in implementation.
 
 ## Contributing
 
-1. Fork it ( https://github.com/stern0/ejabberd.cr/ )
+1. Fork it ( https://github.com/kaskerd/ejabberd.cr/ )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -75,4 +75,4 @@ The test specs are currently in implementation.
 
 ## Contributors
 
-- Bug reports and pull requests are welcome on GitHub at [stern0](https://github.com/stern0) - creator, maintainer
+- Bug reports and pull requests are welcome on GitHub at [stern0](https://github.com/kaskerd) - creator, maintainer
