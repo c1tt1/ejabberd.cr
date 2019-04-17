@@ -12,7 +12,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   ejabberd:
-    github: kaskerd/ejabberd.cr
+    github: cllty/ejabberd.cr
 ```
 
 ## Usage
